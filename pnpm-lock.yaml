@@ -37,9 +37,15 @@ devDependencies:
   '@types/tryghost__content-api':
     specifier: ^1.3.14
     version: 1.3.14
+  dayjs-nuxt:
+    specifier: ^2.1.9
+    version: 2.1.9
   nuxt:
     specifier: ^3.9.1
     version: 3.9.1(typescript@5.3.3)(vite@5.0.11)
+  nuxt-icon:
+    specifier: ^0.6.8
+    version: 0.6.8(nuxt@3.9.1)(vite@5.0.11)(vue@3.4.13)
   shadcn-nuxt:
     specifier: ^0.8.7
     version: 0.8.7
@@ -693,6 +699,25 @@ packages:
       - '@vue/composition-api'
       - vue
     dev: false
+
+  /@iconify/collections@1.0.380:
+    resolution: {integrity: sha512-w4GPZQSP6Y+923InR6dUvJoAkq5VjnxOQJ1wcM0hnxLStRouBeF4hCz993bYL8yAPonVNCtXlgkIGzLzrTWOxQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: true
+
+  /@iconify/vue@4.1.1(vue@3.4.13):
+    resolution: {integrity: sha512-RL85Bm/DAe8y6rT6pux7D2FJSiUEM/TPfyK7GrbAOfTSwrhvwJW+S5yijdGcmtXouA8MtuH9C7l4hiSE4mLMjg==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.4.13(typescript@5.3.3)
+    dev: true
 
   /@ioredis/commands@1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -1693,6 +1718,7 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    requiresBuild: true
     dev: true
 
   /@tufjs/canonical-json@2.0.0:
@@ -2198,6 +2224,7 @@ packages:
 
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+    requiresBuild: true
     dev: true
 
   /bplist-parser@0.2.0:
@@ -2538,6 +2565,7 @@ packages:
   /commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    requiresBuild: true
     dev: true
 
   /commander@8.3.0:
@@ -2641,6 +2669,7 @@ packages:
 
   /css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
+    requiresBuild: true
     dependencies:
       boolbase: 1.0.0
       css-what: 6.1.0
@@ -2652,6 +2681,7 @@ packages:
   /css-tree@2.2.1:
     resolution: {integrity: sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+    requiresBuild: true
     dependencies:
       mdn-data: 2.0.28
       source-map-js: 1.0.2
@@ -2660,6 +2690,7 @@ packages:
   /css-tree@2.3.1:
     resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
+    requiresBuild: true
     dependencies:
       mdn-data: 2.0.30
       source-map-js: 1.0.2
@@ -2668,6 +2699,7 @@ packages:
   /css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
+    requiresBuild: true
     dev: true
 
   /cssesc@3.0.0:
@@ -2742,12 +2774,27 @@ packages:
   /csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+    requiresBuild: true
     dependencies:
       css-tree: 2.2.1
     dev: true
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  /dayjs-nuxt@2.1.9:
+    resolution: {integrity: sha512-7L1X8Wm+O2s2o+YK8RH1GK0SUUsh7l0lnIzsjaLGvyu64asLs2KVNoh25J4tQurdILp2TyrFaTo/k3k/ZPub9Q==}
+    dependencies:
+      '@nuxt/kit': 3.9.1
+      dayjs: 1.11.10
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+    dev: true
 
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -2901,6 +2948,7 @@ packages:
 
   /dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
@@ -2909,17 +2957,20 @@ packages:
 
   /domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+    requiresBuild: true
     dev: true
 
   /domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
     dev: true
 
   /domutils@3.1.0:
     resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
+    requiresBuild: true
     dependencies:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
@@ -4171,10 +4222,12 @@ packages:
 
   /mdn-data@2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
+    requiresBuild: true
     dev: true
 
   /mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
+    requiresBuild: true
     dev: true
 
   /media-typer@0.3.0:
@@ -4697,6 +4750,7 @@ packages:
 
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
+    requiresBuild: true
     dependencies:
       boolbase: 1.0.0
     dev: true
@@ -4707,6 +4761,21 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /nuxt-icon@0.6.8(nuxt@3.9.1)(vite@5.0.11)(vue@3.4.13):
+    resolution: {integrity: sha512-6eWlNOb6Uvp63uXFdhcmsB1JlubDv76Pot/VwmIu0yJxDYhwytbnv3WAjw2khl2l7W/65V4eMGIEeX9C5Ahxng==}
+    dependencies:
+      '@iconify/collections': 1.0.380
+      '@iconify/vue': 4.1.1(vue@3.4.13)
+      '@nuxt/devtools-kit': 1.0.8(nuxt@3.9.1)(vite@5.0.11)
+      '@nuxt/kit': 3.9.1
+    transitivePeerDependencies:
+      - nuxt
+      - rollup
+      - supports-color
+      - vite
+      - vue
     dev: true
 
   /nuxt@3.9.1(typescript@5.3.3)(vite@5.0.11):

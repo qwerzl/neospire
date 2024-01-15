@@ -2,12 +2,7 @@ const animate = require("tailwindcss-animate")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   safelist: ["dark"],
-  routeRules: {
-    // Homepage pre-rendered at build time
-    '/': { ssr: true },
-  },
   theme: {
     container: {
       center: true,

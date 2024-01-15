@@ -12,7 +12,7 @@ const post: PostOrPage = await useGhost().posts.read({
     }
 )
 
-// console.log(post)
+console.log(post)
 </script>
 
 <template>
@@ -26,16 +26,16 @@ const post: PostOrPage = await useGhost().posts.read({
         />
       </figure>
       <div class="pt-4 md:pt-6">
-        <h1 class="text-[2rem] text-zinc-800 font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">{{ post.title }}</h1>
+        <h1 class="text-[2rem] text-foreground font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">{{ post.title }}</h1>
 
-        <p class="text-black/40 mb-6" v-if="post.custom_excerpt">{{post.custom_excerpt}}</p>
+        <p class="text-secondary-foreground mb-6" v-if="post.custom_excerpt">{{post.custom_excerpt}}</p>
 
-        <div class="text-black/80">
-          <section class="flex items-center gap-3 text-sm">
+        <div class="text-secondary-foreground">
+          <section class="flex items-center gap-3 text-sm flex-wrap">
             <CustomAuthorBadge :authors="post.authors" />
             <div>
 <!--              <time datetime='{{date format='YYYY-MM-DD'}}'>{{date}}</time>-->
-              <div>{{ new Date() }}</div>
+              <div class="text-secondary-foreground"> 发布于 {{ $dayjs(post.published_at).format("YYYY/MM/DD").toString() }}</div>
             </div>
           </section>
         </div>
@@ -44,7 +44,7 @@ const post: PostOrPage = await useGhost().posts.read({
 
     <section class="mt-10 prose">
       <div v-html="post.html"
-           class="flex-col space-y-7 text-neutral-600 article leading-relaxed"
+           class="flex-col space-y-7 text-secondary-foreground article leading-relaxed"
       />
     </section>
   </div>
