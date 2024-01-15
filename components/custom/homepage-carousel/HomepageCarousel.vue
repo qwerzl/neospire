@@ -8,11 +8,19 @@ import {
 } from '@/components/ui/carousel'
 import type { PostOrPage } from "@tryghost/content-api";
 import { useGhost } from "~/composables/useGhost";
+import Autoplay from 'embla-carousel-autoplay'
 
 interface featuredArticle {
   image: string,
   href: string
 }
+
+const plugin = Autoplay({
+  delay: 20000,
+  stopOnMouseEnter: true,
+  stopOnInteraction: false,
+})
+
 // TODO: Explore a better way to manage featured posts.
 // Current strategy is to create a page in ghost with slug "top-carousel" then write plain JSON as content.
 const post: PostOrPage = await useGhost().pages.read({
@@ -25,7 +33,11 @@ const featuredArticles: Array<featuredArticle> = JSON.parse(post.plaintext)
 </script>
 
 <template>
-  <Carousel>
+  <Carousel
+      :plugins="[plugin]"
+      @mouseenter="plugin.stop"
+      @mouseleave="[plugin.reset(), plugin.play()];"
+  >
     <CarouselContent class="">
       <CarouselItem v-for="article in featuredArticles">
         <NuxtLink :to="article.href">
@@ -33,10 +45,8 @@ const featuredArticles: Array<featuredArticle> = JSON.parse(post.plaintext)
         </NuxtLink>
 
       </CarouselItem>
-      <CarouselPrevious class="absolute left-10 bg-background border-none"/>
-      <CarouselNext class="absolute right-10 bg-background border-none"/>
     </CarouselContent>
-    <CarouselPrevious />
-    <CarouselNext />
+    <CarouselPrevious class="absolute left-10 bg-background border-none"/>
+    <CarouselNext class="absolute right-10 bg-background border-none"/>
   </Carousel>
 </template>
