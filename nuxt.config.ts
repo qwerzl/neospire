@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', "@nuxt/image", 'nuxt-icon', 'dayjs-nuxt'],
   runtimeConfig: {
     // Private keys are only available on the server
+    public: {
+      baseUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+    },
     ghostUrl: process.env.GHOST_URL,
     ghostContentKey: process.env.GHOST_CONTENT_KEY
   },
