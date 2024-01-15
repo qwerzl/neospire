@@ -25,7 +25,7 @@ const props = defineProps({
                :src="author.profile_image"
           :alt="author.name" />
         </a>
-        <Badge v-else>
+        <Badge class="text-background" v-else>
           {{ author.name }}
         </Badge>
         <Icon v-if="index !== props.authors.length - 1" name="charm:cross"/>
