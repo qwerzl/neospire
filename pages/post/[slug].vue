@@ -12,7 +12,7 @@ const post: PostOrPage = await useGhost().posts.read({
     }
 )
 
-console.log(post)
+// console.log(post)
 </script>
 
 <template>
