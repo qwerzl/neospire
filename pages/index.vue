@@ -15,6 +15,7 @@ if (!posts) throw {"errorCode": 500}
 </script>
 
 <template>
+  <CustomHomepageCarousel />
   <div class="post-feed max-w-[96ch] px-6 mx-auto grid grid-cols-1 gap-4 mt-6">
     <div v-for="post in posts">
       <CustomPostCard :post="post" />
