@@ -19,10 +19,11 @@ const post: PostOrPage = await useGhost().posts.read({
   <div class="max-w-prose mx-auto px-6 md:px-0">
     <header id="article-header" class="overflow-hidden pt-6 pb-6 md:pt-12">
       <figure class="rounded-2xl overflow-hidden mb-4" v-if="post.feature_image">
-        <NuxtImg
-          class="h-full w-full object-cover"
-          :src="post.feature_image"
-          :alt="post.title"
+        <NuxtPicture
+            format="avif, webp"
+            :imgAttrs="{class: 'h-full w-full object-cover'}"
+            :src="post.feature_image"
+            :alt="post.title"
         />
       </figure>
       <div class="pt-4 md:pt-6">

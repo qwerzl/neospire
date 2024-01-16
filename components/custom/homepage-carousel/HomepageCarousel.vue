@@ -41,9 +41,15 @@ const featuredArticles: Array<featuredArticle> = JSON.parse(post.plaintext)
     <CarouselContent class="">
       <CarouselItem v-for="article in featuredArticles">
         <NuxtLink :to="article.href">
-          <NuxtImg :src="article.image" class="object-cover h-full w-screen aspect-[5/2] lg:aspect-[4/1]"/>
+          <NuxtPicture
+              format="avif,webp"
+              :src="article.image"
+              :imgAttrs="{class:'object-cover h-full w-screen aspect-[5/2] lg:aspect-[21/4]'}"
+              quality="80"
+              preload
+              :placeholder="[50, 25, 75, 5]"
+          />
         </NuxtLink>
-
       </CarouselItem>
     </CarouselContent>
     <CarouselPrevious class="absolute left-10 bg-background border-none"/>
