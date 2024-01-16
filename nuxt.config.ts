@@ -1,9 +1,9 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', "@nuxt/image", 'nuxt-icon', 'dayjs-nuxt'],
-  routeRules: {
-    '/': { ssr: false },
-    '/post/*': { ssr: false },
-  },
+  // routeRules: {
+  //   '/': { ssr: false },
+  //   '/post/*': { ssr: false },
+  // },
   runtimeConfig: {
     // Private keys are only available on the server
     public: {
