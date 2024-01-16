@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0(vue@3.4.13)
   '@tryghost/content-api':
-    specifier: link:lib/content-api
-    version: link:lib/content-api
+    specifier: link:lib/tryghost-content-api
+    version: link:lib/tryghost-content-api
   '@vueuse/core':
     specifier: ^10.7.2
     version: 10.7.2(vue@3.4.13)
