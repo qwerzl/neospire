@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Private keys are only available on the server
     public: {
-      baseUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+      baseUrl: process.env.VERCEL ? `https://${process.env.BASE_DOMAIN}` : "http://localhost:3000"
     },
     ghostUrl: process.env.GHOST_URL,
     ghostContentKey: process.env.GHOST_CONTENT_KEY
