@@ -45,7 +45,7 @@ const featuredArticles: Array<featuredArticle> = JSON.parse(post.plaintext)
               format="avif,webp"
               :src="article.image"
               :imgAttrs="{class:'object-cover h-full w-screen aspect-[5/2] lg:aspect-[21/4]'}"
-              quality="80"
+              quality="70"
               preload
               :placeholder="[50, 25, 75, 5]"
           />
