@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0(vue@3.4.13)
   '@tryghost/content-api':
-    specifier: link:lib/tryghost-content-api
-    version: link:lib/tryghost-content-api
+    specifier: file:./lib/tryghost-content-api
+    version: file:lib/tryghost-content-api
   '@vueuse/core':
     specifier: ^10.7.2
     version: 10.7.2(vue@3.4.13)
@@ -7166,3 +7166,10 @@ packages:
       compress-commons: 5.0.1
       readable-stream: 3.6.2
     dev: true
+
+  file:lib/tryghost-content-api:
+    resolution: {directory: lib/tryghost-content-api, type: directory}
+    name: '@tryghost/content-api'
+    dependencies:
+      redaxios: 0.5.1
+    dev: false

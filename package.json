@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@radix-icons/vue": "^1.0.0",
-    "@tryghost/content-api": "link:lib/tryghost-content-api",
+    "@tryghost/content-api": "file:./lib/tryghost-content-api",
     "@vueuse/core": "^10.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
